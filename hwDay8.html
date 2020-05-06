@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    <!--
+<!--
         "Selectors"
         Selectors helps targeting elements in the DOM.
         They are useful bot on CSS & JS.
@@ -24,59 +24,47 @@
             EX8) Write a selector to target the second post author
             EX9) Write a selector to target the "back to top" link
             EX10) Write a selector to target the footer
-        */ 
+        */
 
-        .jumbotron h1{
+        .jumbotron h1 {
             font-weight: 700;
         }
 
-        .nav a{
+        .nav a {
             font-weight: bold;
         }
 
-        .jumbotron a{
+        .jumbotron a {
             font-style: italic;
         }
 
-        .blog-post:nth-of-type(1){
+        .blog-post:nth-of-type(1) {
             font-weight: bold;
         }
 
-        .nav a:nth-child(even){
+        .nav a:nth-child(even) {
             font-weight: lighter;
         }
 
-        .blog-post:nth-of-type(3){
+        .blog-post:nth-of-type(3) {
             font-weight: lighter;
         }
 
-        .blog-sidebar li{
+        .blog-sidebar li {
             font-size: large;
         }
 
-        .blog-post:nth-of-type(2) a{
+        .blog-post:nth-of-type(2) a {
             font-style: italic;
         }
 
-        .blog-footer{
+        .blog-footer {
             font-size: large;
         }
 
-        .blog-footer p:nth-child(2){
+        .blog-footer p:nth-child(2) {
             font-style: italic;
         }
-
-
-
-
-
-
-
-
-
-
-
-
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -353,23 +341,28 @@
     </footer>
 
     <script>
-    
-    /*
-        JS Exercises
-        EX11) Write a function to add a new link into the navbar
-        EX12) Write a function to remove the Search Looking class item
-        EX13) Write a function to change the background of the jumbotron
-        EX14) Write a function to change the color of the main title
-        EX15) Write a function to change the column size for post headings
-        EX16) Write a function to remove all the links under "Elsewhere"
-        EX17) Write a function to trim just the first 150 characters for each blog post
-        EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
-        EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
-        EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
-    */
+
+        /*
+            JS Exercises
+            EX11) Write a function to add a new link into the navbar
+            EX12) Write a function to remove the Search Looking class item
+            EX13) Write a function to change the background of the jumbotron
+            EX14) Write a function to change the color of the main title
+            EX15) Write a function to change the column size for post headings
+            EX16) Write a function to remove all the links under "Elsewhere"
+            EX17) Write a function to trim just the first 150 characters for each blog post
+            EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+            EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
+            EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
+        */
 
         //ex11
         //////////////////
+
+        function addLink() {
+
+        }
+
 
         //ex12
 
@@ -377,18 +370,20 @@
 
         //ex13
 
-        function changeBg(){
-            let jumbo = document.querySelector('.jumbotron')
-            let bg = jumbo.style.backgroundColor= 'red'
+        function changeJumbBack() {
+            let jumbB = document.querySelector('.jumbotron');
+            jumbB.classList.remove('bg-dark');
+            jumbB.classList.add('bg-success');
         }
-        
+        changeJumbBack();
+
         //////////////////
 
         //ex14
 
-        function colorTitle(){
+        function colorTitle() {
             let col = document.querySelector('h1')
-            let change = col.style.color= 'red'
+            let change = col.style.color = 'red'
         }
 
         ////////////////////
@@ -400,9 +395,17 @@
 
         //ex16
 
-        function removeLi(){
-            let li = document.querySelector('.p-4')
-            
+        
+
+        ///////////////////
+
+        //ex17
+
+        function trimChar() {
+            let remove = document.querySelectorAll('.blog-post')
+            remove.forEach(element => {
+                element.getElementsByTagName('p')[1].innerText = element.getElementsByTagName('p')[1].innerText.substring(151)
+            });
         }
 
 
@@ -411,11 +414,14 @@
 
 
 
-        window.onload = function(){
 
-            changeBg()
+
+        window.onload = function () {
+
+            changeJumbBack()
             colorTitle()
-
+            trimChar()
+            
 
 
         }
